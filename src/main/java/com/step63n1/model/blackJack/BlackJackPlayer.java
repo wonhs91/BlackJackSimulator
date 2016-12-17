@@ -13,7 +13,7 @@ public class BlackJackPlayer extends CardPlayer{
 	
 	private double earnedMoney;
 
-	BlackJackPlayer(double originalAsset, double startingBetAmount) {
+	public BlackJackPlayer(double originalAsset, double startingBetAmount) {
 		super(originalAsset, false);
 		this.startingBetAmount = startingBetAmount;
 	}

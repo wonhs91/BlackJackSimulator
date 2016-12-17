@@ -1,13 +1,13 @@
-package com.step63n1.controller.blackJack.impl;
+package com.step63n1.service.blackJack.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.step63n1.controller.blackJack.BlackJackDealCards;
-import com.step63n1.controller.blackJack.BlackJackPlay;
 import com.step63n1.model.blackJack.BlackJackPlayer;
+import com.step63n1.service.blackJack.BlackJackDealCards;
+import com.step63n1.service.blackJack.BlackJackPlay;
 
 @Service
 public class BlackJackPlayImpl implements BlackJackPlay{

@@ -4,11 +4,11 @@ import com.step63n1.model.CardPlayer;
 
 public class BlackJackDealer extends CardPlayer{
 
-	BlackJackDealer(double originalAsset) {
+	public BlackJackDealer(double originalAsset) {
 		super(originalAsset, true);
 	}
 	
-	BlackJackDealer(){
+	public BlackJackDealer(){
 		super(Double.MAX_VALUE, true);
 	}
 }

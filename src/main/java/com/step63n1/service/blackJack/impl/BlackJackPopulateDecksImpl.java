@@ -1,11 +1,10 @@
-package com.step63n1.controller.blackJack.impl;
+package com.step63n1.service.blackJack.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.step63n1.controller.blackJack.BlackJackPopulateDecks;
 import com.step63n1.model.Card;
 import com.step63n1.model.Deck;
 import com.step63n1.model.HouseRules;
@@ -15,6 +14,7 @@ import com.step63n1.model.blackJack.TrumpDeck;
 import com.step63n1.model.blackJack.TrumpDecks;
 import com.step63n1.model.enums.Rank;
 import com.step63n1.model.enums.Suit;
+import com.step63n1.service.blackJack.BlackJackPopulateDecks;
 
 @Service
 public class BlackJackPopulateDecksImpl implements BlackJackPopulateDecks{

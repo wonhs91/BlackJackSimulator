@@ -3,7 +3,7 @@ package com.step63n1.main;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.step63n1.controller.blackJack.BlackJackService;
+import com.step63n1.service.blackJack.BlackJackService;
 
 public class Main {
 	

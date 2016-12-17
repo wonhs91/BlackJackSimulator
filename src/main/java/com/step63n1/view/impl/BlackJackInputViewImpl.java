@@ -13,6 +13,10 @@ public class BlackJackInputViewImpl implements BlackJackInputView{
 	private boolean doesDealerStandSoft17;
 	private double blackJackWager;
 	
+	private int numPlayers;
+	private double minBet;
+	
+	
 	public int getNumDecks(){
 		return numDecks;
 	}
@@ -34,6 +38,23 @@ public class BlackJackInputViewImpl implements BlackJackInputView{
 		doesDealerStandSoft17 = scanner.nextBoolean();
 		System.out.println("What is the blackjack wager:");
 		blackJackWager = scanner.nextDouble();
+	}
+	
+	public void askSettingsSpecifications(){
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("# of players: ");
+		numPlayers = scanner.nextInt();
+		System.out.println("minimum Bet: ");
+		minBet = scanner.nextDouble();
+		
+	}
+
+	public int getNumPlayers() {
+		return numPlayers;
+	}
+
+	public double getMinBet() {
+		return minBet;
 	}
 	
 	

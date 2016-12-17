@@ -9,5 +9,11 @@ public interface BlackJackInputView {
 	public boolean getDoesDealerStandSoft17();
 	
 	public double getBlackJackWager();
+	
+	public int getNumPlayers();
+	
+	public double getMinBet();
+	
+	public void askSettingsSpecifications();
 
 }

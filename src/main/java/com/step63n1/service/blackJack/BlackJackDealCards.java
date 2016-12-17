@@ -1,4 +1,4 @@
-package com.step63n1.controller.blackJack;
+package com.step63n1.service.blackJack;
 
 public interface BlackJackDealCards {
 

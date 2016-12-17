@@ -1,10 +1,10 @@
-package com.step63n1.controller.blackJack.impl;
+package com.step63n1.service.blackJack.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.step63n1.controller.blackJack.BlackJackRuleSetup;
 import com.step63n1.model.blackJack.BlackJackHouseRules;
+import com.step63n1.service.blackJack.BlackJackRuleSetup;
 import com.step63n1.view.BlackJackInputView;
 
 @Service

@@ -1,4 +1,4 @@
-package com.step63n1.controller;
+package com.step63n1.service;
 
 import org.springframework.stereotype.Component;
 
