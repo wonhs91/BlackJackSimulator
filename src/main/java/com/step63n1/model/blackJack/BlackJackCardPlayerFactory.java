@@ -1,6 +1,6 @@
 package com.step63n1.model.blackJack;
 
-import com.step63n1.model.CardPlayer;
+import com.step63n1.model.BlackJackTableSitter;
 
 public class BlackJackCardPlayerFactory {
 
@@ -10,19 +10,19 @@ public class BlackJackCardPlayerFactory {
 
 	private double originalAsset;
 	
-	public CardPlayer generateDealer(double originalAsset){
+	public BlackJackTableSitter generateDealer(double originalAsset){
 		return new BlackJackDealer(originalAsset);
 	}
 	
-	public CardPlayer generateDealer(){
+	public BlackJackTableSitter generateDealer(){
 		return this.generateDealer(Double.MAX_VALUE);
 	}
 	
-	public CardPlayer generatePlayer(double originalAsset, double startingBetAmount){
+	public BlackJackTableSitter generatePlayer(double originalAsset, double startingBetAmount){
 		return new BlackJackPlayer(originalAsset, startingBetAmount);
 	}
 	
-	public CardPlayer generatePlayer(){
+	public BlackJackTableSitter generatePlayer(){
 		return this.generatePlayer(500.0, 5.0);
 	}
 

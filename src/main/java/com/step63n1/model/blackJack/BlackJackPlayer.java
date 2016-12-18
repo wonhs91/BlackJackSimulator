@@ -1,8 +1,12 @@
 package com.step63n1.model.blackJack;
 
-import com.step63n1.model.CardPlayer;
+import java.util.List;
 
-public class BlackJackPlayer extends CardPlayer{
+import com.step63n1.model.BlackJackTableSitter;
+
+public class BlackJackPlayer extends BlackJackTableSitter{
+	
+	private List<TrumpCard> hands;
 
 	private double winRate;
 	private double lossRate;
@@ -57,6 +61,15 @@ public class BlackJackPlayer extends CardPlayer{
 	public void setEarnedMoney(double earnedMoney) {
 		this.earnedMoney = earnedMoney;
 	}
+
+	public List<TrumpCard> getHands() {
+		return hands;
+	}
+
+	public void setHands(List<TrumpCard> hands) {
+		this.hands = hands;
+	}
+	
 
 
 }

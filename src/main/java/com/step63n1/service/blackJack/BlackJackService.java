@@ -5,15 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.step63n1.model.CardPlayer;
-import com.step63n1.model.Decks;
-import com.step63n1.model.HouseRules;
-import com.step63n1.model.TableSettings;
-import com.step63n1.service.CardGameService;
+import com.step63n1.model.BlackJackTableSitter;
+import com.step63n1.model.blackJack.BlackJackHouseRules;
+import com.step63n1.model.blackJack.BlackJackTableSettings;
+import com.step63n1.model.blackJack.TrumpDecks;
 import com.step63n1.service.helper.CardShuffleHelper;
 
 @Service ("blackJackService")
-public class BlackJackService implements CardGameService{
+public class BlackJackService {
 
 	@Autowired
 	BlackJackRuleSetup blackJackRuleSetup;
@@ -30,10 +29,10 @@ public class BlackJackService implements CardGameService{
 	
 	public void start(){
 		
-		HouseRules blackJackHouseRules = null;
-		TableSettings blackJackTableSettings = null;
-		Decks trumpDecks = null;
-		List<CardPlayer> blackJackTableSittings = null;
+		BlackJackHouseRules blackJackHouseRules = null;
+		BlackJackTableSettings blackJackTableSettings = null;
+		TrumpDecks trumpDecks = null;
+		List<BlackJackTableSitter> blackJackTableSittings = null;
 		
 		/*
 		 * step1: Decide game rules. 

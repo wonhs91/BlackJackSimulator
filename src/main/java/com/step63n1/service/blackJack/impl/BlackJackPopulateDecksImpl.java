@@ -5,9 +5,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.step63n1.model.Card;
-import com.step63n1.model.Deck;
-import com.step63n1.model.HouseRules;
 import com.step63n1.model.blackJack.BlackJackHouseRules;
 import com.step63n1.model.blackJack.TrumpCard;
 import com.step63n1.model.blackJack.TrumpDeck;
@@ -21,28 +18,28 @@ public class BlackJackPopulateDecksImpl implements BlackJackPopulateDecks{
 	
 	private BlackJackHouseRules blackJackHouseRules;
 	
-	public TrumpDecks populateDecks(HouseRules houseRules) {
+	public TrumpDecks populateDecks(BlackJackHouseRules houseRules) {
 		// TODO Auto-generated method stub
-		blackJackHouseRules = (BlackJackHouseRules) houseRules;
+		blackJackHouseRules = houseRules;
 		return this.generateDecks();
 	}
 	
 	private TrumpDecks generateDecks(){
 		TrumpDecks trumpDecks = new TrumpDecks();
-		List<Deck> decks = new ArrayList<Deck>();
+		List<TrumpDeck> decks = new ArrayList<TrumpDeck>();
 		
 		for (int i = 0; i < blackJackHouseRules.getNumDecks(); i++){
 			decks.add(this.generateDeck());
 		}
 		
-		trumpDecks.setDecks(decks);
+		trumpDecks.setDecks(blackJackHouseRules.getNumDecks(), decks);
 		
 		return trumpDecks;
 	}
 	
 	private TrumpDeck generateDeck(){
 		TrumpDeck trumpDeck = new TrumpDeck();
-		List<Card> trumpCards = new ArrayList<Card>();
+		List<TrumpCard> trumpCards = new ArrayList<TrumpCard>();
 		
 		for (Suit suit : Suit.values()) {
 			for(Rank rank : Rank.values()){
@@ -60,7 +57,4 @@ public class BlackJackPopulateDecksImpl implements BlackJackPopulateDecks{
 		return trumpCard;
 	}
 
-	
-	
-	
 }

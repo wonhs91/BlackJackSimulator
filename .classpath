@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" output="target/classes" path="src/main/java">
+	<classpathentry excluding="com/step63n1/model/Card.java|com/step63n1/model/CardPlayer.java|com/step63n1/model/Deck.java|com/step63n1/model/Decks.java|com/step63n1/model/HouseRules.java|com/step63n1/model/TableSettings.java|com/step63n1/service/CardGameService.java|com/step63n1/service/HouseRuleSetUp.java|com/step63n1/service/Play.java" kind="src" output="target/classes" path="src/main/java">
 		<attributes>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>

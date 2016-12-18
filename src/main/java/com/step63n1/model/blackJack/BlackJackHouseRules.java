@@ -2,10 +2,9 @@ package com.step63n1.model.blackJack;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.step63n1.model.HouseRules;
 import com.step63n1.model.enums.Game;
 
-public class BlackJackHouseRules extends HouseRules{
+public class BlackJackHouseRules {
 	
 	private Game game = Game.BlackJack;
 	

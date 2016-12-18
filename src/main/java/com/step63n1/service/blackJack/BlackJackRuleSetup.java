@@ -1,9 +1,9 @@
 package com.step63n1.service.blackJack;
 
-import org.springframework.stereotype.Component;
+import com.step63n1.model.blackJack.BlackJackHouseRules;
 
-import com.step63n1.service.HouseRuleSetUp;
+public interface BlackJackRuleSetup{
 
-public interface BlackJackRuleSetup extends HouseRuleSetUp{
+	BlackJackHouseRules setUpHouseRules();
 
 }

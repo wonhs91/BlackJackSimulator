@@ -1,10 +1,9 @@
 package com.step63n1.model.blackJack;
 
-import com.step63n1.model.Card;
 import com.step63n1.model.enums.Rank;
 import com.step63n1.model.enums.Suit;
 
-public class TrumpCard extends Card{
+public class TrumpCard{
 
 	private Suit suit;
 	private Rank rank;

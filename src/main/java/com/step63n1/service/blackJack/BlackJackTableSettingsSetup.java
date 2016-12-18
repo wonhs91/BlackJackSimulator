@@ -1,8 +1,8 @@
 package com.step63n1.service.blackJack;
 
-import com.step63n1.model.TableSettings;
+import com.step63n1.model.blackJack.BlackJackTableSettings;
 
 public interface BlackJackTableSettingsSetup {
 
-	public TableSettings setUpTableSettings();
+	public BlackJackTableSettings setUpTableSettings();
 }

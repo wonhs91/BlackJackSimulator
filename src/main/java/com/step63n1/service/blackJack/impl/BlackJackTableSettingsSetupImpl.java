@@ -2,7 +2,6 @@ package com.step63n1.service.blackJack.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.step63n1.model.TableSettings;
 import com.step63n1.model.blackJack.BlackJackTableSettings;
 import com.step63n1.service.blackJack.BlackJackTableSettingsSetup;
 import com.step63n1.view.BlackJackInputView;
@@ -15,7 +14,7 @@ public class BlackJackTableSettingsSetupImpl implements BlackJackTableSettingsSe
 	BlackJackInputView blackJackInputView;
 	
 	
-	public TableSettings setUpTableSettings() {
+	public BlackJackTableSettings setUpTableSettings() {
 		// TODO Auto-generated method stub
 		blackJackTableSettings = new BlackJackTableSettings();
 		blackJackInputView.askSettingsSpecifications();

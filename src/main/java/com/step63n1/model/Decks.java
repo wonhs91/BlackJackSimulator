@@ -12,13 +12,14 @@ public class Decks {
 		return decks;
 	}
 	
-	public void setDecks(int startingNumDecks, List<Card> decks){
+	public void setDecks(List<Card> decks){
 		this.decks = decks;
-		this.startingNumDeck = startingNumDecks;
+
 	}
 	
-	public void setDecks(List<Deck> decks){
+	public void setDecks(int startingNumDecks, List<Deck> decks){
 		List<Card> cards = new ArrayList<Card>();
+		this.startingNumDeck = startingNumDecks;
 
 		for (Deck deck : decks){
 			cards.addAll(deck.getDeck());

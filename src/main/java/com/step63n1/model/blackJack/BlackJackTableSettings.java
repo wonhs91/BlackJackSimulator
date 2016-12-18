@@ -1,10 +1,10 @@
 package com.step63n1.model.blackJack;
 
-import com.step63n1.model.TableSettings;
 
-public class BlackJackTableSettings extends TableSettings{
+public class BlackJackTableSettings {
 
 	private double minBet;
+	private int numPlayers;
 
 	public double getMinBet() {
 		return minBet;
@@ -13,6 +13,18 @@ public class BlackJackTableSettings extends TableSettings{
 	public void setMinBet(double minBet) {
 		this.minBet = minBet;
 	}
+
+	public int getNumPlayers() {
+		return numPlayers;
+	}
+
+	public void setNumPlayers(int numPlayers) {
+		if (numPlayers <= 0){
+			numPlayers = 1;
+		}
+		this.numPlayers = numPlayers;
+	}
+	
 	
 	
 }

@@ -1,10 +1,10 @@
 package com.step63n1.service.blackJack;
 
-import com.step63n1.model.Decks;
-import com.step63n1.model.HouseRules;
+import com.step63n1.model.blackJack.BlackJackHouseRules;
+import com.step63n1.model.blackJack.TrumpDecks;
 
 public interface BlackJackPopulateDecks {
 
-	public Decks populateDecks(HouseRules houseRules);
-	
+	TrumpDecks populateDecks(BlackJackHouseRules blackJackHouseRules);
+
 }
