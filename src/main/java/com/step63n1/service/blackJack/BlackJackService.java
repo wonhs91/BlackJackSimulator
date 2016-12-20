@@ -25,6 +25,9 @@ public class BlackJackService {
 	
 	@Autowired
 	BlackJackPopulatePlayers blackJackPopulatePlayers; 
+	
+	@Autowired
+	BlackJackPlay blackJackPlay;
 
 	
 	public void start(){
@@ -32,7 +35,7 @@ public class BlackJackService {
 		BlackJackHouseRules blackJackHouseRules = null;
 		BlackJackTableSettings blackJackTableSettings = null;
 		TrumpDecks trumpDecks = null;
-		List<BlackJackTableSitter> blackJackTableSittings = null;
+		List<BlackJackTableSitter> blackJackTableSitters = null;
 		
 		/*
 		 * step1: Decide game rules. 
@@ -40,28 +43,24 @@ public class BlackJackService {
 		blackJackHouseRules = blackJackRuleSetup.setUpHouseRules();
 		
 		/*
-		 * step2: table settings
-		 */
-		blackJackTableSettings = blackJackTableSettingsSetup.setUpTableSettings();
-		
-		/*
-		 * step3: Populate Decks
+		 * step2: Populate Decks
 		 */ 		 
 		trumpDecks = blackJackPopulateDecks.populateDecks(blackJackHouseRules);
 
 		/*
-		 * step4: Populate Players
+		 * step3: Populate Players
 		 */
-		blackJackTableSittings = blackJackPopulatePlayers.populatePlayers(blackJackTableSettings);
+		blackJackTableSitters = blackJackPopulatePlayers.populatePlayers(blackJackTableSettings);
 		
 		/*
-		 * step5: shuffle Decks 
+		 * step4: shuffle Decks 
 		 */
 		trumpDecks = CardShuffleHelper.shuffleDecks(trumpDecks);
 
 		/*
-		 * step6: play
+		 * step5: play
 		 */
+		blackJackPlay.play(blackJackHouseRules, trumpDecks, blackJackTableSitters);
 	}
 	
 	

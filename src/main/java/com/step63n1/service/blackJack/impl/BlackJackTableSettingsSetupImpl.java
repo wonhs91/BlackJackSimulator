@@ -19,7 +19,7 @@ public class BlackJackTableSettingsSetupImpl implements BlackJackTableSettingsSe
 		blackJackTableSettings = new BlackJackTableSettings();
 		blackJackInputView.askSettingsSpecifications();
 		
-		blackJackTableSettings.setNumPlayers(blackJackInputView.getNumPlayers());
+		blackJackTableSettings.setMaxNumPlayers(blackJackInputView.getNumPlayers());
 		blackJackTableSettings.setMinBet(blackJackInputView.getMinBet());
 		return blackJackTableSettings;
 	}

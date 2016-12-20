@@ -13,7 +13,7 @@ public class BlackJackPopulatePlayersImpl implements BlackJackPopulatePlayers{
 
 	
 	public List<BlackJackTableSitter> populatePlayers(BlackJackTableSettings blackJackTableSettings) {
-		return generatePlayers(blackJackTableSettings.getNumPlayers());
+		return generatePlayers(blackJackTableSettings.getMaxNumPlayers());
 
 	}
 	

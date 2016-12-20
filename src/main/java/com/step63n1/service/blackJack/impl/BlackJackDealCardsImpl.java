@@ -10,7 +10,6 @@ import com.step63n1.service.blackJack.BlackJackDealCards;
 @Service
 public class BlackJackDealCardsImpl implements BlackJackDealCards{
 
-	private  List<BlackJackTableSitter> blackJackPlayers;
 	public void dealCards() {
 		// TODO Auto-generated method stub
 		/*

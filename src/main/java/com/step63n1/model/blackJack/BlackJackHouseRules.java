@@ -11,6 +11,9 @@ public class BlackJackHouseRules {
 	private int numDecks;
 	private boolean doesDealerStandSoft17;
 	private double blackJackWager;
+
+	private double minBet;
+	private int maxNumPlayers;
 	
 	public BlackJackHouseRules(){
 		// default house rules
@@ -49,5 +52,23 @@ public class BlackJackHouseRules {
 		this.blackJackWager = blackJackWager;
 	}
 
+	public double getMinBet() {
+		return minBet;
+	}
+
+	public void setMinBet(double minBet) {
+		this.minBet = minBet;
+	}
+
+	public int getMaxNumPlayers() {
+		return maxNumPlayers;
+	}
+
+	public void setMaxNumPlayers(int numPlayers) {
+		if (numPlayers <= 0){
+			numPlayers = 1;
+		}
+		this.maxNumPlayers = numPlayers;
+	}
 
 }

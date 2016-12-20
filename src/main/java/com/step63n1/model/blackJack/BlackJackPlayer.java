@@ -1,5 +1,6 @@
 package com.step63n1.model.blackJack;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.step63n1.model.BlackJackTableSitter;
@@ -20,6 +21,7 @@ public class BlackJackPlayer extends BlackJackTableSitter{
 	public BlackJackPlayer(double originalAsset, double startingBetAmount) {
 		super(originalAsset, false);
 		this.startingBetAmount = startingBetAmount;
+		this.hands = new ArrayList<TrumpCard>();
 	}
 	
 	public double getWinRate() {
@@ -68,6 +70,20 @@ public class BlackJackPlayer extends BlackJackTableSitter{
 
 	public void setHands(List<TrumpCard> hands) {
 		this.hands = hands;
+	}
+	
+	public void addHand(TrumpCard card){
+		this.hands.add(card);
+	}
+	
+	public int getCardNumber(){
+		
+		int cardNumber = 0;
+		for(TrumpCard card: this.hands){
+			cardNumber += card.getRank().getNumVal();
+		}
+		return cardNumber;
+		
 	}
 	
 

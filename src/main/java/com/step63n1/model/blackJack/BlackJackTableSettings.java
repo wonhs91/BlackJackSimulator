@@ -4,7 +4,7 @@ package com.step63n1.model.blackJack;
 public class BlackJackTableSettings {
 
 	private double minBet;
-	private int numPlayers;
+	private int maxNumPlayers;
 
 	public double getMinBet() {
 		return minBet;
@@ -14,15 +14,15 @@ public class BlackJackTableSettings {
 		this.minBet = minBet;
 	}
 
-	public int getNumPlayers() {
-		return numPlayers;
+	public int getMaxNumPlayers() {
+		return maxNumPlayers;
 	}
 
-	public void setNumPlayers(int numPlayers) {
+	public void setMaxNumPlayers(int numPlayers) {
 		if (numPlayers <= 0){
 			numPlayers = 1;
 		}
-		this.numPlayers = numPlayers;
+		this.maxNumPlayers = numPlayers;
 	}
 	
 	

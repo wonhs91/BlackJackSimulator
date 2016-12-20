@@ -52,6 +52,10 @@ public class TrumpDecks {
 	public void setStartingNumDeck(int startingNumDeck){
 		this.startingNumDeck = startingNumDeck;
 	}
+	
+	public int getNumCardInDecks(){
+		return decks.size();
+	}
 
 	
 }
