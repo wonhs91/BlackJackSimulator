@@ -7,21 +7,17 @@ import com.step63n1.model.BlackJackTableSitter;
 
 public class BlackJackPlayer extends BlackJackTableSitter{
 	
-	private List<TrumpCard> hands;
-
 	private double winRate;
 	private double lossRate;
 	private double pushRate;
 	private double blackJackRate;
 	
 	private double startingBetAmount;
-	
-	private double earnedMoney;
 
 	public BlackJackPlayer(double originalAsset, double startingBetAmount) {
 		super(originalAsset, false);
 		this.startingBetAmount = startingBetAmount;
-		this.hands = new ArrayList<TrumpCard>();
+		
 	}
 	
 	public double getWinRate() {
@@ -55,37 +51,5 @@ public class BlackJackPlayer extends BlackJackTableSitter{
 	public void setBlackJackRate(double blackJackRate) {
 		this.blackJackRate = blackJackRate;
 	}
-
-	public double getEarnedMoney() {
-		return earnedMoney;
-	}
-
-	public void setEarnedMoney(double earnedMoney) {
-		this.earnedMoney = earnedMoney;
-	}
-
-	public List<TrumpCard> getHands() {
-		return hands;
-	}
-
-	public void setHands(List<TrumpCard> hands) {
-		this.hands = hands;
-	}
-	
-	public void addHand(TrumpCard card){
-		this.hands.add(card);
-	}
-	
-	public int getCardNumber(){
-		
-		int cardNumber = 0;
-		for(TrumpCard card: this.hands){
-			cardNumber += card.getRank().getNumVal();
-		}
-		return cardNumber;
-		
-	}
-	
-
 
 }

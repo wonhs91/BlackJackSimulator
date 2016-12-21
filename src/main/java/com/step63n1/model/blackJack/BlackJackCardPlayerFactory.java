@@ -15,7 +15,7 @@ public class BlackJackCardPlayerFactory {
 	}
 	
 	public BlackJackTableSitter generateDealer(){
-		return this.generateDealer(Double.MAX_VALUE);
+		return this.generateDealer(Double.MAX_VALUE/2);
 	}
 	
 	public BlackJackTableSitter generatePlayer(double originalAsset, double startingBetAmount){

@@ -11,6 +11,7 @@ import com.step63n1.model.blackJack.BlackJackHouseRules;
 import com.step63n1.model.blackJack.BlackJackPlayer;
 import com.step63n1.model.blackJack.TrumpCard;
 import com.step63n1.model.blackJack.TrumpDecks;
+import com.step63n1.model.enums.Rank;
 import com.step63n1.service.blackJack.BlackJackDealCards;
 import com.step63n1.service.blackJack.BlackJackPlay;
 
@@ -24,7 +25,7 @@ public class BlackJackPlayImpl implements BlackJackPlay{
 	private TrumpDecks trumpDecks;
 	private List<BlackJackTableSitter> blackJackTableSitters;
 	
-	private List<BlackJackDealer> blackJackDealers;
+	private BlackJackDealer blackJackDealer;
 	private List<BlackJackPlayer> blackJackPlayers;
 	
 	public void play(BlackJackHouseRules blackJackHouseRules, TrumpDecks trumpDecks,
@@ -42,7 +43,7 @@ public class BlackJackPlayImpl implements BlackJackPlay{
 	private void separateDealerToPlayers(){
 		for(BlackJackTableSitter tableSitter: blackJackTableSitters){
 			if (tableSitter.isDealer()){
-				blackJackDealers.add((BlackJackDealer)tableSitter);
+				blackJackDealer = (BlackJackDealer)tableSitter;
 			}
 			else{
 				blackJackPlayers.add((BlackJackPlayer)tableSitter);
@@ -54,12 +55,20 @@ public class BlackJackPlayImpl implements BlackJackPlay{
 		int numRoundOfDeal = 2;
 		int numPlayers = blackJackPlayers.size();
 		
+		/*
+		 * deal cards to players + dealer with 2 rounds. 
+		 */
 		for (int i = 0; i <= numRoundOfDeal; i++){
+			
+			// deal cards to players
 			for (int j = 0; j <= numPlayers; j++){
 				BlackJackPlayer blackJackPlayer = blackJackPlayers.get(j);
 				
 				blackJackPlayer.addHand(drawCard());;
 			}
+			
+			//deal cards to dealer
+			blackJackDealer.addHand(drawCard());
 		}
 		
 	}
@@ -73,4 +82,32 @@ public class BlackJackPlayImpl implements BlackJackPlay{
 		return drawnCard;
 	}
 
+
+	public void playerPlay(){
+		
+	}
+	
+	public int getHandCount(BlackJackTableSitter blackJackTableSitter){
+		int numAce = 0;
+		int handCount = 0;
+		for(TrumpCard card: blackJackTableSitter.getHands()){
+			if (card.getRank().equals(Rank.Ace)){
+				numAce++;
+			}
+			else{
+				handCount += card.getRank().getNumVal();
+			}
+		}
+		
+		for(int i = 0; i < numAce; i++){
+			if((handCount + 11) > 21){
+				handCount += 1;
+			}
+			else{
+				handCount += 11;
+			}
+		}
+		return handCount;
+		
+	}
 }
