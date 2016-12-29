@@ -3,6 +3,7 @@ package com.step63n1.model.blackJack;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.step63n1.model.BlackJackPlayerChoices;
 import com.step63n1.model.BlackJackTableSitter;
 
 public class BlackJackPlayer extends BlackJackTableSitter{
@@ -13,6 +14,23 @@ public class BlackJackPlayer extends BlackJackTableSitter{
 	private double blackJackRate;
 	
 	private double startingBetAmount;
+	private double currentBet;
+
+	public double getStartingBetAmount() {
+		return startingBetAmount;
+	}
+
+	public void setStartingBetAmount(double startingBetAmount) {
+		this.startingBetAmount = startingBetAmount;
+	}
+
+	public double getCurrentBet() {
+		return currentBet;
+	}
+
+	public void setCurrentBet(double currentBet) {
+		this.currentBet = currentBet;
+	}
 
 	public BlackJackPlayer(double originalAsset, double startingBetAmount) {
 		super(originalAsset, false);
@@ -51,5 +69,4 @@ public class BlackJackPlayer extends BlackJackTableSitter{
 	public void setBlackJackRate(double blackJackRate) {
 		this.blackJackRate = blackJackRate;
 	}
-
 }

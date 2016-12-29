@@ -3,44 +3,50 @@ package com.step63n1.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.step63n1.model.blackJack.Hand;
 import com.step63n1.model.blackJack.TrumpCard;
-import com.step63n1.model.enums.Rank;
 
 public class BlackJackTableSitter {
 
-	protected List<TrumpCard> hands;
+	protected List<Hand> hands;
+	
+	protected int whichHand;
 
 	private boolean isDealer;
 	protected double originalAsset;
-	protected double earnedMoney;
+	protected double totalAsset;
 	
 	
 	protected BlackJackTableSitter(double originalAsset, boolean isDealer){
-		this.hands = new ArrayList<TrumpCard>();
+		this.hands = new ArrayList<Hand>();
 		
 		this.originalAsset = originalAsset;
 		this.isDealer = isDealer;
-		this.earnedMoney = 0;
+		this.totalAsset = originalAsset;
 	}
 	
 	
-	public List<TrumpCard> getHands() {
+	public List<Hand> getHands() {
 		return hands;
 	}
 
-	public void setHands(List<TrumpCard> hands) {
+	public void setHands(List<Hand> hands) {
 		this.hands = hands;
 	}
 	
-	public void addHand(TrumpCard card){
-		this.hands.add(card);
+	public void addHand(TrumpCard card, int whichHand){
+		this.hands.get(whichHand).add(card);;
 	}
 	
-	public double getAsset() {
+	public void addHand(TrumpCard card){
+		this.hands.get(whichHand).add(card);;
+	}
+	
+	public double getOriginalAsset() {
 		return originalAsset;
 	}
 
-	public void setAsset(double originalAsset) {
+	public void setOriginalAsset(double originalAsset) {
 		this.originalAsset = originalAsset;
 	}
 
@@ -52,12 +58,25 @@ public class BlackJackTableSitter {
 		this.isDealer = isDealer;
 	}
 	
-	public double getEarnedMoney() {
-		return earnedMoney;
+	public double getTotalAsset() {
+		return totalAsset;
+	}
+	
+	public void winBet(double bet){
+		totalAsset += bet;
+	}
+	
+	public void loseBet(double bet){
+		totalAsset -= bet;
+	}
+	
+	public int getWhichHand() {
+		return whichHand;
 	}
 
-	public void setEarnedMoney(double earnedMoney) {
-		this.earnedMoney = earnedMoney;
+
+	public void setWhichHand(int whichHand) {
+		this.whichHand = whichHand;
 	}
 
 }

@@ -24,7 +24,7 @@ public class BlackJackDealer extends BlackJackTableSitter{
 	}
 	
 	public TrumpCard getFirstCard() {
-		return hands.get(0);
+		return hands.get(0).getHand().get(0);
 	}
 
 	public double getBustRate() {

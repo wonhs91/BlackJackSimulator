@@ -9,24 +9,25 @@ import com.step63n1.model.BlackJackTableSitter;
 import com.step63n1.model.blackJack.BlackJackDealer;
 import com.step63n1.model.blackJack.BlackJackHouseRules;
 import com.step63n1.model.blackJack.BlackJackPlayer;
+import com.step63n1.model.blackJack.Hand;
 import com.step63n1.model.blackJack.TrumpCard;
 import com.step63n1.model.blackJack.TrumpDecks;
 import com.step63n1.model.enums.Rank;
-import com.step63n1.service.blackJack.BlackJackDealCards;
 import com.step63n1.service.blackJack.BlackJackPlay;
+import com.step63n1.view.BlackJackInputView;
 
 @Service
 public class BlackJackPlayImpl implements BlackJackPlay{
 	
 	@Autowired
-	private BlackJackDealCards blackJackDeal;
-	
+	private BlackJackInputView blackJackInputView;
+
 	private BlackJackHouseRules blackJackHouseRules;
 	private TrumpDecks trumpDecks;
 	private List<BlackJackTableSitter> blackJackTableSitters;
 	
 	private BlackJackDealer blackJackDealer;
-	private List<BlackJackPlayer> blackJackPlayers;
+	private List<BlackJackPlayer> blackJackPlayers; 
 	
 	public void play(BlackJackHouseRules blackJackHouseRules, TrumpDecks trumpDecks,
 			List<BlackJackTableSitter> blackJackTableSitters) {
@@ -38,6 +39,8 @@ public class BlackJackPlayImpl implements BlackJackPlay{
 		
 		this.separateDealerToPlayers();
 		this.dealCards();
+		
+		
 	}
 	
 	private void separateDealerToPlayers(){
@@ -64,7 +67,7 @@ public class BlackJackPlayImpl implements BlackJackPlay{
 			for (int j = 0; j <= numPlayers; j++){
 				BlackJackPlayer blackJackPlayer = blackJackPlayers.get(j);
 				
-				blackJackPlayer.addHand(drawCard());;
+				blackJackPlayer.addHand(drawCard());
 			}
 			
 			//deal cards to dealer
@@ -81,16 +84,42 @@ public class BlackJackPlayImpl implements BlackJackPlay{
 		
 		return drawnCard;
 	}
+	
+	public void handPlay(Hand hand){
+		if (this.getHandCount(hand) == 21){
+			hand.stand();
+		}
+	}
 
 
-	public void playerPlay(){
+	public void playerPlay(BlackJackPlayer blackJackPlayer){
+		/*
+		 * step1: check for black Jack
+		 */
+		if(this.getHandCount(blackJackPlayer) == 21){
+			blackJackPlayer.getHands().;
+			//check if dealer has ace
+		}
+		/*
+		 * step2: ask for their decision
+		 */
+		else{
+			boolean doesSplit = blackJackInputView.askSplit();
+			if (doesSplit){
+				blackJackPlayer.getHands();
+			}
+		}
 		
 	}
 	
-	public int getHandCount(BlackJackTableSitter blackJackTableSitter){
+	public void dealerPlay(){
+		
+	}
+	
+	public int getHandCount(Hand hand){
 		int numAce = 0;
 		int handCount = 0;
-		for(TrumpCard card: blackJackTableSitter.getHands()){
+		for(TrumpCard card: hand.getHand()){
 			if (card.getRank().equals(Rank.Ace)){
 				numAce++;
 			}
